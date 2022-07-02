@@ -17,8 +17,7 @@
         echo "Invalid Input!";
     }elseif($userPassword != $userConfirmPassword) {
         echo "Password did not match.";
-    }else {
-        echo $userTel;        
+    }else {     
         $user = $username."|".$userFatherName."|".$userMotherName."|".$dateOfBirth."|".$userGender."|".$userBloodType."|".$accountType."|".$userEmail."|".$userPassword."\r\n";
         $file = fopen('UserData.txt','a');
         fwrite($file, $user);
