@@ -8,7 +8,7 @@
     if ($adminId == null || $adminEmail == null || $adminPassword == null) {
         echo "invalid input!";
     }else {
-        $admin = $adminId."|".$adminEmail."|".$adminPassword."\r\r\n";
+        $admin = $adminId."|".$adminEmail."|".$adminPassword."\r\n";
         $file = fopen('AdminData.txt', 'a');
         fwrite($file, $admin);
         header('location: AdminPage.php');

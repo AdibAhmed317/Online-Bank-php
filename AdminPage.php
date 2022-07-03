@@ -57,20 +57,21 @@
 
   while(!feof($file2)){
     $data2 = fgets($file2);
-    $user2 = explode('|', $data2);
+    $admin = explode('|', $data2);
     
-    if ($user2[0] != null && $user2[1] != null) {
+    if ($admin[0] != null && $admin[1] != null) {
       
 ?>
   <tr>
-    <td><?=$user2[0]?></td>
-    <td><?=$user2[1]?></td>
+    <td><?=$admin[0]?></td>
+    <td><?=$admin[1]?></td>
   </tr>
 <?php
     }
   }
 ?>
     </table>
+    <hr />
     <fieldset>
       <legend><h3>Add new Admin</h3></legend>
       <form method='post' action='./AdminRegCheck.php'>
