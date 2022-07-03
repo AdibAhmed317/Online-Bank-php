@@ -1,7 +1,7 @@
 <?php
   session_start();
   
-  $username = $_GET[$query];
+  // $username = $_GET['username'];
   // $userEmail = $_GET['userEmail'];
 
 ?>
@@ -24,5 +24,6 @@
         <td>Email</td>
       </tr>
     </table>
+    <a href="logout.php"> logout </a>
   </body>
 </html>

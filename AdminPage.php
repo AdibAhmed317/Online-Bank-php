@@ -84,5 +84,6 @@
         <input type="submit" name="submit" value="Submit">
       </form>
     </fieldset>
+    <a href="logout.php"> logout </a>
   </body>
 </html>

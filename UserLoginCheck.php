@@ -20,7 +20,7 @@
 					'username' => $username,
 					'userEmail' => $userEmail
 				);
-				header('location: UserPage.php'?.$query);
+				header('location: UserPage.php');
 			}
 		}
 		echo "invalid user";
