@@ -16,11 +16,7 @@
 			if($username == trim($user[0]) && $userEmail == trim($user[7]) && $userPassword == trim($user[8])){
 				$_SESSION['status'] = true;
 				setcookie('status', 'true', time()+3600, '/');
-				$query = array(
-					'username' => $username,
-					'userEmail' => $userEmail
-				);
-				header('location: UserPage.php');
+				header('location: UserPage.php?userEmail='.$userEmail);
 			}
 		}
 		echo "invalid user";

@@ -84,6 +84,56 @@
         <input type="submit" name="submit" value="Submit">
       </form>
     </fieldset>
+    <hr />
+    <fieldset>
+      <legend><h3>Add new Customer</h3></legend>
+      <form method='post' action='./UserRegCheck.php'>
+      Name <input type="text" name="username" value="" /><br />
+        Father's Name
+        <input type="text" name="userFatherName" value="" /><br />
+        Mother's Name
+        <input type="text" name="userMotherName" value="" /><br />
+        Date of Birth
+        <input type="date" name="dob" value="" /><br />
+        Gender
+        <select name="userGender">
+          <option value="none">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        Blood Group
+        <select name="userBloodType">
+          <option value="none"></option>
+          <option value="A_Positive">A Positive</option>
+          <option value="A_Negative">A Negative</option>
+          <option value="B_Positive">B Positive</option>
+          <option value="B_Negative">B Negative</option>
+          <option value="AB_Positive">AB Positive</option>
+          <option value="AB_Negative">AB Negative</option>
+          <option value="O_Positive">O Positive</option>
+          <option value="O_Negative">O Negative</option>
+      </select>
+      <br />
+        Account type
+        <select name="accountType">
+          <option value="none">Select</option>
+          <option value="Current_Accoutnt">Current Account</option>
+          <option value="Saving_Account">Saving Account</option>
+          <option value="Fixed_Deposit_Account">Fixed deposit Account</option>
+        </select>
+        <br />
+        Email <input type="text" name="userEmail" value="" /><br />
+        Password <input type="password" name="userPassword" value="" /><br />
+        Confirm Password
+        <input type="password" name="userConfirmPassword" value="" /><br />
+        Phone 
+        <input type="text" name="userTel" value="">
+        <br />
+        <input type="submit" name="submit" value="Submit" />
+      </form>
+    </fieldset>
+    <hr />
     <a href="logout.php"> logout </a>
   </body>
 </html>
