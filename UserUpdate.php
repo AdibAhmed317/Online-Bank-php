@@ -90,7 +90,7 @@
         fwrite($file, $user);
         header('location: UserPage.php');
     }elseif (isset($_POST['cancel'])) {
-        header('location: UserPage.php');
+        header('location: LoginPage.html');
     }
 ?>
 </body>
