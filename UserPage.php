@@ -9,6 +9,11 @@
     <title>Customer</title>
   </head>
   <body>
+    <nav>
+      <h1>
+        <a href="HomePage.html">Online Bank</a>
+      </h1>
+    </nav><hr />
     <h1>Welcome <?=$userEmail?></h1><hr />
     <h3>Personal Profile</h3>
     <table border='1'>
@@ -51,7 +56,8 @@
     </tr>
     </table>
     <hr />
-    <a href="logout.php"> logout </a>
-    <a href="<?php echo $href = "UserDelete.php?userEmail=$userEmail & username=$username"?>">Delete Account </a>
+    <a href="logout.php"> logout </a><br />
+    <a href="<?php echo $href = "UserDelete.php?userEmail=$userEmail & username=$username"?>">Delete Account </a><br />
+    <a href="<?php echo $href = "UserUpdate.php?userEmail=$userEmail & username=$username"?>">Update Profile</a>
   </body>
 </html>

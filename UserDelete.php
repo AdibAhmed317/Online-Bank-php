@@ -7,7 +7,7 @@
             $userEmail = $_REQUEST['userEmail'];
             $username = $_REQUEST['username'];
         ?>
-    <form action="Delete.php" method="post">
+    <form action="UserDelete.php" method="post">
 
         <fieldset>
             <legend>Delete</legend>
@@ -32,16 +32,14 @@
 
                 if(isset($_POST['submit'])){
 
-                $filename = $_REQUEST['filename'];
+                $filename = $_REQUEST['./UserData.txt'];
                 unlink($filename);
-                unlink('Files/History.txt');
-                unlink('Files/balance.txt');
-                header('location: Login.html');
+                unlink('./UserData.txt');
+                header('location: LoginPage.html');
 
                 }elseif(isset($_POST['cancel'])){
-                    header('location: Profile.php?accNum='.$accNum);
+                    header('location: UserPage.php');
                 }
-
             ?>
             
     </body>

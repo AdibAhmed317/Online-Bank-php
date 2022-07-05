@@ -6,7 +6,10 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <h1>Welcome Admin</h1><hr />
+    <nav>
+      <h1><a href="HomePage.html">Online Bank</a></h1>
+    </nav><hr>
+    <h1>Welcome Admin</h1>
     <h3>Customer List:</h3>
     <table border="1">
       <tr>

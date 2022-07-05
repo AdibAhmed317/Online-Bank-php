@@ -1,4 +1,1 @@
-adib|abu|asma|2022-07-18|male|O_Positive|Current_Accoutnt|ahmedadib317@gmail.com|1234
-AA AD|abu|bil|2022-07-13|male|B_Positive|Saving_Account|ahmedadibctg@gmail.com|123
-asdf|abu|asd|2022-07-27|male|B_Positive|Saving_Account|wpa@gmail.com|123
-Adib317|abu|bil|2022-07-25|male|B_Positive|Saving_Account|jinnahichamoti@gmail.com|123|
+Adib Ahmed|Abu Taher|Asma Bilkis|04/05/2000|male|O Positive|Current|ahmedadibctg@gmail.com|1234
