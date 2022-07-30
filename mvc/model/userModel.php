@@ -14,7 +14,7 @@
         }
     }
 
-    function Registration($username, $userFatherName, $userMotherName, $dateOfBirth, $userGender, $userBloodType, $accountType, $userEmail, $userPhone, $userPassword){
+    function Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType){
         $conn = getConnection();
         $sql = "INSERT INTO `users`(`Name`, `FatherName`, `MotherName`, `dob`, `Gender`, `BloodType`, `accType`, `Email`, `Phone`, `Password`) VALUES ('{$username}','{$userFatherName}','{$userMotherName}','{$dateOfBirth}','{$userGender}','{$userBloodType}','{$accountType}','{$userEmail}','{$userPhone}','{$userPassword}')";
         $result = mysqli_query($conn, $sql);

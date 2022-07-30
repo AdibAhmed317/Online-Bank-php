@@ -3,26 +3,24 @@
     require_once "../model/userModel.php";
 
     $username = $_POST['username'];
-    $userFatherName = $_POST['userFatherName'];
-    $userMotherName = $_POST['userMotherName'];
-    $dateOfBirth = $_POST['dob'];
-    $userGender = $_POST['userGender'];
-    $userBloodType = $_POST['userBloodType'];
-    $accountType = $_POST['accountType'];
+    $userPhone = $_POST['userPhone'];
     $userEmail = $_POST['userEmail'];
+    $userNid = $_POST['userNid'];
+    $dateOfBirth = $_POST['dob'];
+    $userPermanentAdd = $_POST['userParmanentAdd'];
+    $userTemporaryAdd = $_POST['userTemporaryAdd'];
+    $userAreaCode = $_POST['userAreaCode'];
     $userPassword = $_POST['userPassword'];
     $userConfirmPassword = $_POST['userConfirmPassword'];
-    $userPhone = $_POST['userPhone'];
+    $userGender = $_POST['userGender'];
+    $accountType = $_POST['accountType'];
 
-    if ($username == null || $userFatherName == null || $userMotherName == null || $dateOfBirth == null || $userGender == null || $userBloodType == null || $accountType == null || $userEmail == null || $userPassword == null || $userConfirmPassword == null || $userPhone == null) {
+    if ($username == null || $userPhone == null || $userEmail == null || $userNid == null || $dateOfBirth == null || $userPermanentAdd == null || $userTemporaryAdd == null || $userAreaCode == null || $userPassword == null || $userConfirmPassword == null || $userGender == null || $accountType == null) {
         echo "Invalid Input!";
     }elseif ($userPassword != $userConfirmPassword) {
         echo "Password did not match.";
     }else {
-
-        $status = Registration($username, $userFatherName, $userMotherName, $dateOfBirth, $userGender, $userBloodType, $accountType, $userEmail, $userPhone, $userPassword);
-
-        
+        $status = Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType);
 		if($status){
             $_SESSION['status'] = true;
             setcookie('status', 'true', time()+3600, '/');
