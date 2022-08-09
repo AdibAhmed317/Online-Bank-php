@@ -2,15 +2,84 @@
 <html lang="en">
   <head>
     <title>Home</title>
+    <link rel="stylesheet" href="../assest/css/HomePage.css" />
   </head>
   <body>
-    <h1>Online Bank</h1>
-    <p>Known for trust, honesty, and customer care</p>
-    <hr />
-    <p>Please Select from option below</p>
-    <a href="./LoginPage.html"> <button>Login</button> </a><br />
-    <a href="./RegPage.html">
-      <button>Create new account</button>
-    </a>
+    <div class="homepage">
+      <nav class="navbar">
+        <div class="title">
+          <h1>Online Bank</h1>
+        </div>
+        <div class="pages">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="auth">
+          <a id="sign-in" href="./LoginPage.html">Sign In</a>
+          <a id="sign-up" href="./RegPage.html">Sign Up</a>
+        </div>
+      </nav>
+      <div class="hero-section">
+        <div class="hero-image">
+          <div class="hero-text">
+            <h1 id="slogan">A transformed bank for the transforming world</h1>
+          </div>
+        </div>
+      </div>
+      <div id="about" class="about">
+        <h2>About Us</h2>
+        <br />
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </div>
+      <div class="disclaimer">
+        <h2>Disclaimer !!!</h2>
+        <br />
+        <ul>
+          <li>
+            Our bank does not ask for the details of your account/PIN/password.
+            Therefore any one pretending to be asking you for information from
+            the bank/technical team may be fraudulent entities, so please
+            beware.
+          </li>
+          <li>
+            You should know how to operate net transactions and if you are not
+            familiar you may refrain from doing so. You may seek bank's guidance
+            in this regard. Bank is not responsible for online transactions
+            going wrong.
+          </li>
+          <li>
+            We shall also not be responsible for wrong transactions and wanton
+            disclosure of details by you. Viewing option and transaction option
+            on the net are different. You may exercise your option diligently.
+          </li>
+        </ul>
+      </div>
+      <div id="contact" class="footer">
+        <div class="footerFlex">
+          <div class="social">
+            <h4>Social</h4>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+            </ul>
+          </div>
+          <div class="contact"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

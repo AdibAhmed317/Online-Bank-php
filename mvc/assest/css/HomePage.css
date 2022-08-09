@@ -1,0 +1,123 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.navbar {
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: medium;
+  color: black;
+}
+
+.navbar a:hover {
+  color: #defff2;
+}
+
+#sign-in {
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+}
+
+#sign-in:hover {
+  color: #defff2;
+}
+
+#sign-up {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #defff2;
+}
+
+#sign-up:hover {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #190eae;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/HomePage.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-section {
+  height: 100vh;
+}
+
+#slogan {
+  font-size: 30px;
+  color: #defff2;
+}
+
+.about {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: burlywood;
+}
+
+.about h2 {
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: larger;
+  margin-bottom: 20px;
+}
+
+.disclaimer {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.disclaimer h2 {
+  font-size: xx-large;
+  margin-bottom: 20px;
+  color: #df4759;
+}
+
+.disclaimer li {
+  font-size: larger;
+  margin-bottom: 20px;
+}
