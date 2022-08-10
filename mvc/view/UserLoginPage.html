@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>User login</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../assest/css/UserLoginPage.css" />
   </head>
   <body>
-    <fieldset>
-      <legend><h1>Login</h1></legend>
-      <form action="../controller/UserLoginCheck.php" method="post">
-        Name:
-        <input type="text" name="loginUserName" value="" /><br />
-        Email:
-        <input type="text" name="loginUserEmail" value="" /><br />
-        Password:
-        <input type="text" name="loginUserPassword" value="" /><br />
-        <input type="submit" name="submit" value="Submit" />
-      </form>
-    </fieldset>
+    <div class="container">
+      <h2>Login</h2>
+      <div class="reg_form">
+        <div class="reg_form_inner">
+          <form method="post" action="../controller/UserLoginCheck.php">
+            <input type="text" name="username" placeholder="Name"/>
+            <input type="text" name="userEmail" placeholder="Email"/>
+            <input type="text" name="userNid" placeholder="Account Number"  required />
+            <input type="text" name="userPassword" placeholder="Password"  />
+            <button id="submit" type="submit" name="submit" value="Submit" />Login</button><br>
+            <a id="login" href="../view/LoginPage.html">Don't have an account? Create one.</a>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
