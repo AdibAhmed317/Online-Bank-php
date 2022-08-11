@@ -20,9 +20,11 @@
         mysqli_query($conn, $sql);
     }
 
-    function getPersonalData()
+    function getPersonalData($accNumber)
     {
         $conn = getConnection();
+        $sql = "select * from users where Account_Number='{$accNumber}'"
+        mysqli_query($conn, $sql);
     }
 ?>
 

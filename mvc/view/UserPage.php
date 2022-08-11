@@ -1,17 +1,115 @@
 <?php
   session_start();
-  
   $accNumber = $_REQUEST['accNumber'];
 
+  getPersonalData($accNumber);
 ?>
 <html lang="en">
   <head>
     <title>Profile</title>
+    <link rel="stylesheet" href="../assest/css/UserPage.css" />
   </head>
   <body>
-    <div>
-      <h1>Welcome <?=$accNumber?>
-      <h3>Personal Profile</h3>
+    <div class="container">
+    <nav class="navbar">
+        <div class="title">
+          <h1>Online Bank</h1>
+        </div>
+        <div class="pages">
+          <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#sendMoney">Send Money</a></li>
+            <li><a href="#applyLoan">Apply for Loan</a></li>
+            <li><a href="#passwordChange">Update Password</a></li>
+            <li><a href="#history">History</a></li>
+          </ul>
+        </div>
+        <div class="auth">
+          <a id="sign-up" href="./RegPage.html">Logout</a>
+        </div>
+      </nav>
+      <div id="profile" class="profile">
+          <table id="profile-table">
+            <h1 id='profile-heading'>Profile</h1>
+              <tr>
+                <td>Name:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Phone:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>NID:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Date of Birth:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Permanent Address:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Temporary Address:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Area Code:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Gender:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Account Type:</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Account Number</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>Balance</td>
+                <td>Name</td>
+              </tr>
+          </table>
+      </div>
+      <div id="sendMoney" class="send-money">
+        <form action="" class="form">
+          <h1>Send Money</h1>
+          <input type="text" name="receiverAccNumb" value="" placeholder="Enter receiver Account Number">
+          <input type="text" name="creditAmount" value="" placeholder="Enter amount">
+          <button id="submit" type="submit" name="submit" value="Submit" />Send</button>
+        </form>
+      </div>
+      <div id="applyLoan" class="apply-loan">
+      <form action="" class="form">
+          <h1>Apply Loan</h1>
+          <input type="text" name="loanAmount" value="" placeholder="Enter Loan Amount">
+          <input type="text" name="loanMessage" value="" placeholder="Enter reason for loan">
+          <button id="submit" type="submit" name="submit" value="Submit" />Apply</button>
+        </form>
+      </div>
+      <div id="passwordChange" class="password-change">
+      <form action="" class="form">
+          <h1>Password Change</h1>
+          <input type="text" name="currentPW" value="" placeholder="Enter Current Password">
+          <input type="text" name="newPW" value="" placeholder="Enter New Password">
+          <button id="submit" type="submit" name="submit" value="Submit" />Change</button>
+        </form>
+      </div>
+      <div id="history" class="history">
+        <h1>History</h1>
+      </div>
     </div>
   </body>
 </html>
+
+
