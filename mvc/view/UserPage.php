@@ -20,6 +20,7 @@
         <div class="pages">
           <ul>
             <li><a href="#profile">Profile</a></li>
+            <li><a href="#deposit">Deposit</a></li>
             <li><a href="#sendMoney">Send Money</a></li>
             <li><a href="#applyLoan">Apply for Loan</a></li>
             <li><a href="#passwordChange">Update Password</a></li>
@@ -83,11 +84,21 @@
               </tr>
           </table>
       </div>
+      <div id="deposit" class="send-money">
+        <form class="form"  method="post" action="../controller/SendMoney.php">
+          <h1>Deposit Money</h1>
+          <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
+          <input type="text" name="creditAmount" value="" placeholder="Enter amount">
+          <input type="text" name="receiverAccNumb" value="" placeholder="Enter your password">
+          <button id="submit" type="submit" name="submit" value="Submit" />Deposit</button>
+        </form>
+      </div>
       <div id="sendMoney" class="send-money">
         <form class="form"  method="post" action="../controller/SendMoney.php">
           <h1>Send Money</h1>
           <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
           <input type="text" name="receiverAccNumb" value="" placeholder="Enter receiver Account Number">
+          <input type="text" name="userPassword" value="" placeholder="Enter your password">
           <input type="text" name="creditAmount" value="" placeholder="Enter amount">
           <button id="submit" type="submit" name="submit" value="Submit" />Send</button>
         </form>
@@ -95,8 +106,10 @@
       <div id="applyLoan" class="apply-loan">
       <form action="" class="form">
           <h1>Apply Loan</h1>
+          <input type="text" name="loanAmount" value="" placeholder="Enter Your Account Number">
           <input type="text" name="loanAmount" value="" placeholder="Enter Loan Amount">
           <input type="text" name="loanMessage" value="" placeholder="Enter reason for loan">
+          <input type="text" name="loanAmount" value="" placeholder="Enter your password">
           <button id="submit" type="submit" name="submit" value="Submit" />Apply</button>
         </form>
       </div>
