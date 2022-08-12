@@ -131,3 +131,16 @@ body {
   color: #defff2;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.profile table {
+  width: 60%;
+  background-color: burlywood;
+}
+
+.profile th {
+  height: 70px;
+}
+
+.profile td {
+  text-align: center;
+}

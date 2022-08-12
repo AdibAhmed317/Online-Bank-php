@@ -1,6 +1,5 @@
 <?php
     session_start();
-
 	require_once "../model/userModel.php";
 
     $username = $_POST['username'];

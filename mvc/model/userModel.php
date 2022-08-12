@@ -22,19 +22,45 @@
 
     function getPersonalData($accNumber)
     {
-        $conn = getConnection();
-        $sql = "select * from users where Account_Number='{$accNumber}'"
-        mysqli_query($conn, $sql);
-    }
-?>
-
-
-        <!-- $result = mysqli_query($conn, $sql);
+        $conn = getconnection();
+        $sql = "select * from users where Account_Number='{$accNumber}'";
+        $result = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($result);
-
-        if($count >0){
-            return true;
+    
+        if($count > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $args = array(
+                    "Name" => $row['Name'],
+                    "Phone" => $row['Phone'],
+                    "Email" => $row['Email'],
+                    "NID" => $row['NID'],
+                    "dob" => $row['dob'],
+                    "Permanent_Add" => $row['Permanent_Add'],
+                    "Temporary_Add" => $row['Temporary_Add'],
+                    "Area_Code" => $row['Area_Code'],
+                    "Gender" => $row['Gender'],
+                    "Account_Type" => $row['Account_Type'],
+                    "Account_Number" => $row['Account_Number'],
+                    "Balance" => $row['Balance'],
+                );
+            }
+            return $args;
         }else{
-            return false;
+            echo 'No Data Found!!!';
         }
-    } -->
+    }
+
+    // function sendMoney($senderAccNumb,$receiverAccNumb, $creditAmount)
+    // {
+    //     $conn = getConnection();
+	// 	$sql = "";
+	// 	$result = mysqli_query($conn, $sql);
+	// 	$count = mysqli_num_rows($result);
+
+    //     if($count >0){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+    ?>

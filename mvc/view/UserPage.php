@@ -2,7 +2,9 @@
   session_start();
   $accNumber = $_REQUEST['accNumber'];
 
-  getPersonalData($accNumber);
+	require_once "../model/userModel.php";
+
+  $data = getPersonalData($accNumber);
 ?>
 <html lang="en">
   <head>
@@ -13,7 +15,7 @@
     <div class="container">
     <nav class="navbar">
         <div class="title">
-          <h1>Online Bank</h1>
+          <h1>Welcome, <?php echo $data["Name"] ?></h1>
         </div>
         <div class="pages">
           <ul>
@@ -25,65 +27,66 @@
           </ul>
         </div>
         <div class="auth">
-          <a id="sign-up" href="./RegPage.html">Logout</a>
+          <a id="sign-up" href="./HomePage.html">Logout</a>
         </div>
       </nav>
       <div id="profile" class="profile">
-          <table id="profile-table">
+          <table id="profile-table" class="profile-table" border='1'>
             <h1 id='profile-heading'>Profile</h1>
               <tr>
                 <td>Name:</td>
-                <td>Name</td>
+                <td><?php echo $data["Name"] ?></td>
               </tr>
               <tr>
                 <td>Phone:</td>
-                <td>Name</td>
+                <td><?php echo $data["Phone"] ?></td>
               </tr>
               <tr>
                 <td>Email:</td>
-                <td>Name</td>
+                <td><?php echo $data["Email"] ?></td>
               </tr>
               <tr>
                 <td>NID:</td>
-                <td>Name</td>
+                <td><?php echo $data["NID"] ?></td>
               </tr>
               <tr>
                 <td>Date of Birth:</td>
-                <td>Name</td>
+                <td><?php echo $data["dob"] ?></td>
               </tr>
               <tr>
                 <td>Permanent Address:</td>
-                <td>Name</td>
+                <td><?php echo $data["Permanent_Add"] ?></td>
               </tr>
               <tr>
                 <td>Temporary Address:</td>
-                <td>Name</td>
+                <td><?php echo $data["Temporary_Add"] ?></td>
               </tr>
               <tr>
                 <td>Area Code:</td>
-                <td>Name</td>
+                <td><?php echo $data["Area_Code"] ?></td>
               </tr>
               <tr>
                 <td>Gender:</td>
-                <td>Name</td>
+                <td><?php echo $data["Gender"] ?></td>
               </tr>
               <tr>
                 <td>Account Type:</td>
-                <td>Name</td>
+                <td><?php echo $data["Account_Type"] ?></td>
               </tr>
               <tr>
                 <td>Account Number</td>
-                <td>Name</td>
+                <td><?php echo $data["Account_Number"] ?></td>
               </tr>
               <tr>
                 <td>Balance</td>
-                <td>Name</td>
+                <td>$<?php echo $data["Balance"] ?></td>
               </tr>
           </table>
       </div>
       <div id="sendMoney" class="send-money">
-        <form action="" class="form">
+        <form class="form"  method="post" action="../controller/SendMoney.php">
           <h1>Send Money</h1>
+          <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
           <input type="text" name="receiverAccNumb" value="" placeholder="Enter receiver Account Number">
           <input type="text" name="creditAmount" value="" placeholder="Enter amount">
           <button id="submit" type="submit" name="submit" value="Submit" />Send</button>
