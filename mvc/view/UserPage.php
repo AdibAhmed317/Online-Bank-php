@@ -85,11 +85,11 @@
           </table>
       </div>
       <div id="deposit" class="send-money">
-        <form class="form"  method="post" action="../controller/SendMoney.php">
+        <form class="form"  method="post" action="../controller/DepositMoney.php">
           <h1>Deposit Money</h1>
           <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
-          <input type="text" name="creditAmount" value="" placeholder="Enter amount">
-          <input type="text" name="receiverAccNumb" value="" placeholder="Enter your password">
+          <input type="text" name="depositAmount" value="" placeholder="Enter amount">
+          <input type="text" name="userPassword" value="" placeholder="Enter your password">
           <button id="submit" type="submit" name="submit" value="Submit" />Deposit</button>
         </form>
       </div>

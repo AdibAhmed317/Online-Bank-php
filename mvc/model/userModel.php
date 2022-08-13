@@ -50,17 +50,12 @@
         }
     }
 
-    // function sendMoney($senderAccNumb,$receiverAccNumb, $creditAmount)
-    // {
-    //     $conn = getConnection();
-	// 	$sql = "";
-	// 	$result = mysqli_query($conn, $sql);
-	// 	$count = mysqli_num_rows($result);
-
-    //     if($count >0){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+    function depositMoney($senderAccNumb,$creditAmountInt,$userPassword)
+    {
+        $conn = getConnection();
+		$sql = "
+        update `users` set `Balance`=Balance + {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}';
+        ";
+		mysqli_query($conn, $sql);
+    }
     ?>
