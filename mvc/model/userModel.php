@@ -54,8 +54,49 @@
     {
         $conn = getConnection();
 		$sql = "
-        update `users` set `Balance`=Balance + {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}';
+        update `users` set `Balance`=Balance + {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$userPassword}';
         ";
 		mysqli_query($conn, $sql);
     }
-    ?>
+
+    function sendMoney($senderAccNumb,$receiverAccNumb,$userPassword,$creditAmountInt)
+    {
+        $conn = getConnection();
+		$sql = "
+        update `users` set `Balance`=Balance - {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$userPassword}';
+        ";
+		mysqli_query($conn, $sql);
+
+        $conn2 = getConnection();
+		$sql2 = "
+        update `users` set `Balance`=Balance + {$creditAmountInt} WHERE `Account_Number`='{$receiverAccNumb}';
+        ";
+		mysqli_query($conn2, $sql2);
+    }
+
+    function withdraw ($senderAccNumb,$creditAmountInt,$userPassword){
+        $conn = getConnection();
+		$sql = "
+        update `users` set `Balance`=Balance - {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$userPassword}';
+        ";
+        mysqli_query($conn, $sql);
+    }
+
+    function passwordChange($senderAccNumb,$currentPW,$newPW)
+    {
+        $conn = getConnection();
+		$sql = "
+        update `users` set `Password`='{$newPW}' WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$currentPW}';
+        ";
+        mysqli_query($conn, $sql);
+    }
+
+    function deleteAccount($senderAccNumb,$userPassword)
+    {
+        $conn = getConnection();
+		$sql = "
+        DELETE FROM `users` WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$userPassword}';
+        ";
+        mysqli_query($conn, $sql);
+    }
+?>

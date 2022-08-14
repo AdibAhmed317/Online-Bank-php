@@ -22,13 +22,14 @@
             <li><a href="#profile">Profile</a></li>
             <li><a href="#deposit">Deposit</a></li>
             <li><a href="#sendMoney">Send Money</a></li>
-            <li><a href="#applyLoan">Apply for Loan</a></li>
+            <li><a href="#applyLoan">Withdraw Money</a></li>
             <li><a href="#passwordChange">Update Password</a></li>
             <li><a href="#history">History</a></li>
+            <li><a href="#deleteAccount">Delete Account</a></li>
           </ul>
         </div>
         <div class="auth">
-          <a id="sign-up" href="./HomePage.html">Logout</a>
+          <a id="sign-up" href="../controller/logout.php">Logout</a>
         </div>
       </nav>
       <div id="profile" class="profile">
@@ -89,7 +90,7 @@
           <h1>Deposit Money</h1>
           <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
           <input type="text" name="depositAmount" value="" placeholder="Enter amount">
-          <input type="text" name="userPassword" value="" placeholder="Enter your password">
+          <input type="password" name="userPassword" value="" placeholder="Enter your password">
           <button id="submit" type="submit" name="submit" value="Submit" />Deposit</button>
         </form>
       </div>
@@ -98,27 +99,35 @@
           <h1>Send Money</h1>
           <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
           <input type="text" name="receiverAccNumb" value="" placeholder="Enter receiver Account Number">
-          <input type="text" name="userPassword" value="" placeholder="Enter your password">
+          <input type="password" name="userPassword" value="" placeholder="Enter your password">
           <input type="text" name="creditAmount" value="" placeholder="Enter amount">
           <button id="submit" type="submit" name="submit" value="Submit" />Send</button>
         </form>
       </div>
       <div id="applyLoan" class="apply-loan">
-      <form action="" class="form">
-          <h1>Apply Loan</h1>
-          <input type="text" name="loanAmount" value="" placeholder="Enter Your Account Number">
-          <input type="text" name="loanAmount" value="" placeholder="Enter Loan Amount">
-          <input type="text" name="loanMessage" value="" placeholder="Enter reason for loan">
-          <input type="text" name="loanAmount" value="" placeholder="Enter your password">
+      <form class="form"  method="post" action="../controller/Withdraw.php">
+          <h1>Withdraw Money</h1>
+          <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
+          <input type="text" name="withdrawAmount" value="" placeholder="Enter withdraw Amount">
+          <input type="password" name="userPassword" value="" placeholder="Enter your password">
           <button id="submit" type="submit" name="submit" value="Submit" />Apply</button>
         </form>
       </div>
       <div id="passwordChange" class="password-change">
-      <form action="" class="form">
+      <form class="form"  method="post" action="../controller/PasswordChange.php">
           <h1>Password Change</h1>
-          <input type="text" name="currentPW" value="" placeholder="Enter Current Password">
-          <input type="text" name="newPW" value="" placeholder="Enter New Password">
+          <input type="text" name="senderAccNumb" value="" placeholder="Enter your Account Number">
+          <input type="password" name="currentPW" value="" placeholder="Enter Current Password">
+          <input type="password" name="newPW" value="" placeholder="Enter New Password">
           <button id="submit" type="submit" name="submit" value="Submit" />Change</button>
+        </form>
+      </div>
+      <div id="deleteAccount" class="password-change">
+      <form class="form"  method="post" action="../controller/DeleteAccount.php">
+          <h1>Account Delete</h1>
+          <input type="text" name="senderAccNumb" value="" placeholder="Enter your Account Number">
+          <input type="password" name="userPassword" value="" placeholder="Enter Current Password">
+          <button id="submit" type="submit" name="submit" value="Submit" />Delete</button>
         </form>
       </div>
       <div id="history" class="history">
@@ -127,5 +136,3 @@
     </div>
   </body>
 </html>
-
-

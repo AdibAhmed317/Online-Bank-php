@@ -144,3 +144,10 @@ body {
 .profile td {
   text-align: center;
 }
+
+#delete-account {
+  margin-top: 10px;
+  background-color: burlywood;
+  padding: 15px;
+  border-radius: 20px;
+}

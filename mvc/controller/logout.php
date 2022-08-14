@@ -2,5 +2,5 @@
 
 	session_start();
 	session_destroy();
-	header('location: LoginPage.html');
+	header('location: ../view/HomePage.html');
 ?>
