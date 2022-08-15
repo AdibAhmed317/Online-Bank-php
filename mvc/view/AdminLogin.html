@@ -2,20 +2,23 @@
 <html lang="en">
   <head>
     <title>Admin Login</title>
+    <link rel="stylesheet" href="../assest/css/AdminLogin.css">
   </head>
   <body>
-    <fieldset>
-      <legend><h1>Login as an Admin</h1></legend>
-      <form method="post" action="AdminLoginCheck.php">
-        User Id
-        <input type="text" name="userId" value="" /><br />
-        Email
-        <input type="text" name="userEmail" value="" /><br />
-        Password
-        <input type="text" name="userPassword" value="" />
-        <hr />
-        <input type="submit" name="submit" value="Submit" />
-      </form>
-    </fieldset>
+    <div class="container">
+      <h2>Admin login</h2>
+      <div class="reg_form">
+        <div class="reg_form_inner">
+          <form method="post" action="../controller/AdminLoginCheck.php">
+            <input type="text" name="adminName" placeholder="Name"/>
+            <input type="text" name="adminEmail" placeholder="Email"/>
+            <input type="text" name="adminId" placeholder="Admin Id"  required />
+            <input type="text" name="adminPassword" placeholder="Password"  />
+            <button id="submit" type="submit" name="submit" value="Submit" />Login</button><br>
+            <a id="goBack" href="../view/LoginPage.html">Don't belong here? Go back to home page.</a>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

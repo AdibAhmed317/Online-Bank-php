@@ -99,4 +99,16 @@
         ";
         mysqli_query($conn, $sql);
     }
+
+    function fetchTransactionDetails($accNumber)
+    {
+        $conn = getConnection();
+		
+        $sql = "SELECT * FROM `transactions` WHERE `Account_Number`='{$accNumber}';";
+        $result = mysqli_query($conn, $sql);
+
+        return $result;
+    
+    }
+    
 ?>

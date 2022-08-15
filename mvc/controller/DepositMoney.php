@@ -8,5 +8,5 @@
     $creditAmountInt = intval($depositAmount);
 
     depositMoney($senderAccNumb,$creditAmountInt,$userPassword);
-    header('location: ../view/UserLoginPage.html');
+    header('location: ../view/UserPage.php?accNumber='.$senderAccNumb);
 ?>

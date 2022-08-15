@@ -1,5 +1,10 @@
 <?php
   session_start();
+
+  if (!isset($_SESSION['status'])) {
+    header('location: ../view/LoginPage.html');
+  }
+
   $accNumber = $_REQUEST['accNumber'];
 
 	require_once "../model/userModel.php";
@@ -24,7 +29,7 @@
             <li><a href="#sendMoney">Send Money</a></li>
             <li><a href="#applyLoan">Withdraw Money</a></li>
             <li><a href="#passwordChange">Update Password</a></li>
-            <li><a href="#history">History</a></li>
+            <li><a href="./history_transaction.php?accNumber=<?php echo $accNumber;?>">History</a></li>
             <li><a href="#deleteAccount">Delete Account</a></li>
           </ul>
         </div>
@@ -130,9 +135,9 @@
           <button id="submit" type="submit" name="submit" value="Submit" />Delete</button>
         </form>
       </div>
-      <div id="history" class="history">
-        <h1>History</h1>
-      </div>
+      <!-- <div id="history" class="history">
+        <h1><a href=""></a></h1>
+      </div> -->
     </div>
   </body>
 </html>
