@@ -10,4 +10,5 @@
     $creditAmountInt = intval($sendAmount);
 
     sendMoney($senderAccNumb,$receiverAccNumb,$userPassword,$creditAmountInt);
+    header('location: ../view/UserLoginPage.html');
 ?>

@@ -9,4 +9,5 @@
     $creditAmountInt = intval($withdrawAmount);
 
     withdraw($senderAccNumb,$creditAmountInt,$userPassword);
+    header('location: ../view/HomePage.html');
 ?>

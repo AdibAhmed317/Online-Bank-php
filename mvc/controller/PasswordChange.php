@@ -7,4 +7,5 @@
     $newPW = $_POST['newPW'];
 
     passwordChange($senderAccNumb,$currentPW,$newPW);
+    header('location: ../view/UserLoginPage.html');
 ?>
