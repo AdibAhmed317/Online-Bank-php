@@ -7,6 +7,12 @@
     $userPassword = $_POST['userPassword'];
     $creditAmountInt = intval($depositAmount);
 
-    depositMoney($senderAccNumb,$creditAmountInt,$userPassword);
-    header('location: ../view/UserPage.php?accNumber='.$senderAccNumb);
+    $status = depositMoney($senderAccNumb,$creditAmountInt,$userPassword);
+    if($status){
+		$_SESSION['status'] = true;
+		setcookie('status', 'true', time()+3600, '/');
+        header('location: ../view/UserPage.php?accNumber='.$senderAccNumb);
+	}else{
+		echo require_once "../view/LoginError.html";
+	}
 ?>

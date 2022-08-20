@@ -30,13 +30,12 @@
   background-color: burlywood;
 }
 
-.reg_form input,
-select {
+.reg_form input {
   height: 40px;
   width: 350px;
   background-color: #defff2;
-  margin-left: 100px;
-  margin-bottom: 20px;
+  margin-left: 315px;
+  margin-bottom: 10px;
   border-radius: 10px;
   border-style: none;
   padding: 2px;
@@ -62,4 +61,11 @@ select {
 #login {
   margin-left: 380px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+p {
+  font-size: smaller;
+  color: red;
+  margin-left: 315px;
+  margin-bottom: 10px;
 }

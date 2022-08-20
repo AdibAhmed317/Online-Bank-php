@@ -3,17 +3,18 @@
   <head>
     <title>Login</title>
     <link rel="stylesheet" href="../assest/css/UserLoginPage.css" />
+    <script src="../assest/js/UserLoginPage.js"></script>
   </head>
   <body>
     <div class="container">
       <h2>Login</h2>
       <div class="reg_form">
         <div class="reg_form_inner">
-          <form method="post" action="../controller/UserLoginCheck.php">
-            <input type="text" name="username" placeholder="Name"/>
-            <input type="text" name="userEmail" placeholder="Email"/>
-            <input type="text" name="userNid" placeholder="Account Number"  required />
-            <input type="text" name="userPassword" placeholder="Password"  />
+          <form method="post" action="../controller/UserLoginCheck.php" onsubmit="return validateForm()">
+            <input id="userNid" type="text" name="userNid" placeholder="Account Number"/>
+            <p id="userNidP"></p>
+            <input id="userPassword" type="text" name="userPassword" placeholder="Password"  />
+            <p id="userPasswordP"></p>
             <button id="submit" type="submit" name="submit" value="Submit" />Login</button><br>
             <a id="login" href="../view/LoginPage.html">Don't have an account? Create one.</a>
           </form>

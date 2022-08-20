@@ -16,20 +16,12 @@
     $accountType = $_POST['accountType'];
     $accountNumb = $_POST['userNid'];
 
-    if ($username == null || $userPhone == null || $userEmail == null || $userNid == null || $dateOfBirth == null || $userPermanentAdd == null || $userTemporaryAdd == null || $userAreaCode == null || $userPassword == null || $userConfirmPassword == null || $userGender == null || $accountType == null) {
-        echo "Invalid Input!";
-    }elseif ($userPassword != $userConfirmPassword) {
-        echo "Password did not match.";
-    }else {
-        Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType, $accountNumb);
+    $status = Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType, $accountNumb);
+    if($status){
+        $_SESSION['status'] = true;
+        setcookie('status', 'true', time()+3600, '/');
         header('location: ../view/LoginPage.html');
-        echo("Account Created. Please Login");
+    }else{
+		echo require_once "../view/RegError.html";
     }
 ?>
-
-<!-- $status = Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType);
-if($status){
-    $_SESSION['status'] = true;
-    setcookie('status', 'true', time()+3600, '/');
-    header('location: ../../LoginPage.html');
-} -->
