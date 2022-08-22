@@ -10,12 +10,12 @@
       <h2>Login</h2>
       <div class="reg_form">
         <div class="reg_form_inner">
-          <form method="post" action="../controller/UserLoginCheck.php" onsubmit="return validateForm()">
+          <form id="loginForm" action ='../controller/UserLoginCheck.php' method="post" onsubmit="return validateForm()">
             <input id="userNid" type="text" name="userNid" placeholder="Account Number"/>
             <p id="userNidP"></p>
             <input id="userPassword" type="text" name="userPassword" placeholder="Password"  />
             <p id="userPasswordP"></p>
-            <button id="submit" type="submit" name="submit" value="Submit" />Login</button><br>
+            <button id="submit" type="submit" name="submit" value="Submit"/>Login</button><br>
             <a id="login" href="../view/LoginPage.html">Don't have an account? Create one.</a>
           </form>
         </div>

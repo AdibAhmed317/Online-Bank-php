@@ -14,9 +14,9 @@
         }
     }
 
-    function Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType, $accountNumb){
+    function Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType, $accountNumb, $desPic){
         $conn = getConnection();
-        $sql = "INSERT INTO `users`(`Name`, `Phone`, `Email`, `NID`, `dob`, `Permanent_Add`, `Temporary_Add`, `Area_Code`, `Password`, `Gender`, `Account_Type`, `Account_Number`) VALUES ('{$username}','{$userPhone}','{$userEmail}','{$userNid}','{$dateOfBirth}','{$userPermanentAdd}','{$userTemporaryAdd}','{$userAreaCode}','{$userPassword}','{$userGender}','{$accountType}', '{$accountNumb}')";
+        $sql = "INSERT INTO `users`(`Name`, `Phone`, `Email`, `NID`, `dob`, `Permanent_Add`, `Temporary_Add`, `Area_Code`, `Password`, `Gender`, `Account_Type`, `Account_Number`, `Picture`) VALUES ('{$username}','{$userPhone}','{$userEmail}','{$userNid}','{$dateOfBirth}','{$userPermanentAdd}','{$userTemporaryAdd}','{$userAreaCode}','{$userPassword}','{$userGender}','{$accountType}', '{$accountNumb}', '{$desPic}')";
         $result = mysqli_query($conn, $sql);
 
         if($result){
@@ -48,6 +48,7 @@
                     "Account_Type" => $row['Account_Type'],
                     "Account_Number" => $row['Account_Number'],
                     "Balance" => $row['Balance'],
+                    "Picture" => $row['Picture'],
                 );
             }
             return $args;
@@ -147,5 +148,35 @@
         $result = mysqli_query($conn, $sql);
 
         return $result;
+    }
+
+    function customerList($Fsearch)
+    {
+        $conn = getconnection();
+        $sql = "select * from users where Name='{$Fsearch}'";
+        $result = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($result);
+    
+        if($count > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $args = array(
+                    "Name" => $row['Name'],
+                    "Phone" => $row['Phone'],
+                    "Email" => $row['Email'],
+                    "NID" => $row['NID'],
+                    "dob" => $row['dob'],
+                    "Permanent_Add" => $row['Permanent_Add'],
+                    "Temporary_Add" => $row['Temporary_Add'],
+                    "Area_Code" => $row['Area_Code'],
+                    "Gender" => $row['Gender'],
+                    "Account_Type" => $row['Account_Type'],
+                    "Account_Number" => $row['Account_Number'],
+                    "Balance" => $row['Balance'],
+                );
+            }
+            return $args;
+        }else{
+            echo 'No Data Found!!!';
+        }
     }
 ?>

@@ -53,5 +53,7 @@ function validateForm() {
     document.getElementById('userConfirmPasswordP').innerHTML =
       'This section must be filled out';
     return false;
+  } else if (userPassword != userConfirmPassword) {
+    alert('Password did not matched!');
   }
 }

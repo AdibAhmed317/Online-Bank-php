@@ -16,6 +16,12 @@
 </head>
 <body>
   <div>
+    <form method="POST" action="">
+        <input type="text" id="search" name="" value="" placeholder = "Search by Type">
+        <input type="button" id="click" name="submit" value="Search" onclick="Search()"> 
+		<h3></h3>
+		<h1></h1>
+    </form>
     <table>
         <thead>
             <th>Account No.</th>

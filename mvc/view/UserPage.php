@@ -38,6 +38,7 @@
         </div>
       </nav>
       <div id="profile" class="profile">
+        <img src = '{$data["Picture"]}'  alt="">
           <table id="profile-table" class="profile-table" border='1'>
             <h1 id='profile-heading'>Profile</h1>
               <tr>

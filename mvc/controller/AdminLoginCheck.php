@@ -17,7 +17,7 @@
 		if($status){
 			$_SESSION['status'] = true;
 			setcookie('status', 'true', time()+3600, '/');
-			header('location: ../view/HomePage.html');
+			header('location: ../view/AdminPage.php');
 		}else{
 			alret("invalid user");
 		}

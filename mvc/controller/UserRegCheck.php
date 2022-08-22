@@ -15,8 +15,14 @@
     $userGender = $_POST['userGender'];
     $accountType = $_POST['accountType'];
     $accountNumb = $_POST['userNid'];
+    // $Picture = $_POST['Picture'];
 
-    $status = Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType, $accountNumb);
+    $srcPic = $_FILES['picture']['tmp_name'];
+    $desPic = "../asset/picture/".$_FILES['picture']['name'];
+
+    move_uploaded_file($srcPic, $desPic);
+
+    $status = Registration($username, $userPhone, $userEmail, $userNid, $dateOfBirth, $userPermanentAdd, $userTemporaryAdd, $userAreaCode, $userPassword, $userConfirmPassword, $userGender, $accountType, $accountNumb, $desPic);
     if($status){
         $_SESSION['status'] = true;
         setcookie('status', 'true', time()+3600, '/');
