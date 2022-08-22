@@ -8,6 +8,12 @@
 
     $creditAmountInt = intval($withdrawAmount);
 
-    withdraw($senderAccNumb,$creditAmountInt,$userPassword);
-    header('location: ../view/HomePage.html');
+    $status = withdraw($senderAccNumb,$creditAmountInt,$userPassword);
+    if($status){
+		$_SESSION['status'] = true;
+		setcookie('status', 'true', time()+3600, '/');
+        header('location: ../view/UserPage.php?accNumber='.$senderAccNumb);
+	}else{
+		echo require_once "../view/LoginError.html";
+	}
 ?>

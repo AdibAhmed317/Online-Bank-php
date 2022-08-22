@@ -135,9 +135,6 @@
           <button id="submit" type="submit" name="submit" value="Submit" />Delete</button>
         </form>
       </div>
-      <!-- <div id="history" class="history">
-        <h1><a href=""></a></h1>
-      </div> -->
     </div>
   </body>
 </html>

@@ -18,9 +18,9 @@
   <div>
     <table>
         <thead>
-            <th>SL</th>
             <th>Account No.</th>
             <th>Type</th>
+            <th>Amount</th>
         </thead>
         <tbody>
             <?php 
@@ -30,14 +30,13 @@
               while($row = mysqli_fetch_assoc($result)) {
                   ?>
                   <tr>
-                    <td><?php echo $row["Sl_no"]; ?></td>
                     <td><?php echo $row["Account_Number"]; ?></td>
                     <td><?php echo $row["Transaction_Type"]; ?></td>
+                    <td><?php echo $row["Amount"]; ?></td>
                   </tr>
                   <?php
                   }
-                } 
-            
+                }
                     ?>
         </tbody>
     </table>

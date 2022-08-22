@@ -65,6 +65,9 @@
 		$result = mysqli_query($conn, $sql);
 
         if ($result) {
+            $conn = getConnection();
+            $sql = "INSERT INTO `transactions`(`Account_Number`, `Transaction_Type`, `Amount`, `Receiver`) VALUES ('{$senderAccNumb}','Diposit', '{$creditAmountInt}', '{$senderAccNumb}')";
+            $result = mysqli_query($conn, $sql);
             return true;
         } else {
             return false;
@@ -77,13 +80,22 @@
 		$sql = "
         update `users` set `Balance`=Balance - {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$userPassword}';
         ";
-		mysqli_query($conn, $sql);
+		$result1 = mysqli_query($conn, $sql);
 
         $conn2 = getConnection();
 		$sql2 = "
         update `users` set `Balance`=Balance + {$creditAmountInt} WHERE `Account_Number`='{$receiverAccNumb}';
         ";
-		mysqli_query($conn2, $sql2);
+		$result2 = mysqli_query($conn2, $sql2);
+
+        if ($result1 && $result2) {
+            $conn = getConnection();
+            $sql = "INSERT INTO `transactions`(`Account_Number`, `Transaction_Type`, `Amount`, `Receiver`) VALUES ('{$senderAccNumb}','Send Money', '{$creditAmountInt}', '{$receiverAccNumb}')";
+            $result = mysqli_query($conn, $sql);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function withdraw ($senderAccNumb,$creditAmountInt,$userPassword){
@@ -91,7 +103,16 @@
 		$sql = "
         update `users` set `Balance`=Balance - {$creditAmountInt} WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$userPassword}';
         ";
-        mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $conn = getConnection();
+            $sql = "INSERT INTO `transactions`(`Account_Number`, `Transaction_Type`, `Amount`, `Receiver`) VALUES ('{$senderAccNumb}','Withdraw', '{$creditAmountInt}', '{$senderAccNumb}')";
+            $result = mysqli_query($conn, $sql);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function passwordChange($senderAccNumb,$currentPW,$newPW)
@@ -100,7 +121,13 @@
 		$sql = "
         update `users` set `Password`='{$newPW}' WHERE `Account_Number`='{$senderAccNumb}' and `Password`='{$currentPW}';
         ";
-        mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function deleteAccount($senderAccNumb,$userPassword)
@@ -120,7 +147,5 @@
         $result = mysqli_query($conn, $sql);
 
         return $result;
-    
     }
-    
 ?>
