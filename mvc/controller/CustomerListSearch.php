@@ -59,4 +59,3 @@
             }
             
 ?>
-            <!-- <td><img src=$pic style='width:100px;height:100px';</td> -->

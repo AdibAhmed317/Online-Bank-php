@@ -38,9 +38,9 @@
         </div>
       </nav>
       <div id="profile" class="profile">
-        <img src = '{$data["Picture"]}'  alt="">
-          <table id="profile-table" class="profile-table" border='1'>
-            <h1 id='profile-heading'>Profile</h1>
+        <table id="profile-table" class="profile-table" border='1'>
+          <h1 id='profile-heading'>Profile</h1>
+          <img src="../controller/uploads/<?php echo $data["Picture"] ?>" style='width:150px;height:150px;margin-bottom:2px'>
               <tr>
                 <td>Name:</td>
                 <td><?php echo $data["Name"] ?></td>
@@ -105,8 +105,8 @@
           <h1>Send Money</h1>
           <input type="text" name="senderAccNumb" value="" placeholder="Enter Your Account Number">
           <input type="text" name="receiverAccNumb" value="" placeholder="Enter receiver Account Number">
-          <input type="password" name="userPassword" value="" placeholder="Enter your password">
           <input type="text" name="creditAmount" value="" placeholder="Enter amount">
+          <input type="password" name="userPassword" value="" placeholder="Enter your password">
           <button id="submit" type="submit" name="submit" value="Submit" />Send</button>
         </form>
       </div>
